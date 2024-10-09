@@ -1,7 +1,7 @@
 # COMP2160 Prac Week 12 - Refactoring
 
 ## Today's Task
-Today's prac is focused on putting your game development skills in action, rather than learning a new skill. This practical involves refactoring an older practical from the unit. You can pick any practical you already have a full mark for. If you only have half marks for practicals, speak to your demonstrator about which practical task is best for you to pick.
+Today's prac is focused on putting your game development skills in action, rather than learning a new area of development. This practical involves refactoring an older practical from the unit. You can pick any practical you already have a full mark for. If you only have half marks for practicals, speak to your demonstrator about which practical task is best for you to pick.
 
 ## Refactoring
 This task involves refactoring a previous practical task you have completed. Refactoring is the process of re-writing code to improve its operations without changing functionality. The topic was previously covered in live lectures by both Cameron and Malcolm. You can also read Vasileios Karavasilis' [Game Developer article on Refactoring](https://www.gamedeveloper.com/programming/refactoring-the-way-to-perfection-) for more context.
@@ -12,31 +12,31 @@ Pick a practical task you have already completed (or you have approval from your
 ## Step 2 - Plan your refector (30 min)
 
 ### Finding a smell
-When refactoring, we are looking to not change the functionality of the code, but instead to improve its **performance** or **architecture**, making it easier to **use and modify**. You often want to think about working with another person (or yourself six months from now), and how the way the code is written currently will get in the way of that. The problems that emerge later due to poorly written code is often called **technical debt**, and we can identify technical debt through its **code smell**. Code smell comes in many shapes and forms, but a few key characteristics are, according to [[Matt Eland](https://multisearch.mq.edu.au/permalink/61MACQUARIE_INST/467l3g/cdi_safari_books_v2_9781835089989):
+When refactoring, we are looking to not change the functionality of the code, but instead to improve its **performance** or **architecture**, making it easier to **use and modify**. Often, when we first write code, we take a few shortcuts to get things done. These little shortcuts add up! The problems that emerge later due to poorly written code is often called **technical debt**, and we can identify technical debt through **code smell**. Code smell comes in many shapes and forms. According to [Matt Eland](https://multisearch.mq.edu.au/permalink/61MACQUARIE_INST/467l3g/cdi_safari_books_v2_9781835089989), a few key characteristics that suggest a piece of code is smelly are:
 
 * It’s difficult to understand what it does or why it does it.
 * You or people on your team avoid working with it.
 * It’s slower to modify than other areas or tends to break when modified.
 * It’s hard to test or debug.
 
-Spend a little bit of time reading over the code used in the practical you have chosen, and see if you can identify any bits of code where this is true. Are very convoluted solutions used, which break whenever little things are changed? Are there magic numbers, strings, or other hard-coded elements that make your code harder to modify or use in different contexts? Is it written in a way that makes it difficult to understand, such as odd names for variables or everything being stuck in the Update() method? Maybe there are dependencies between objects that make the game difficult to debug (such as a Game Manager or Player that needs to be aware of a UI manager to work).
+Spend a little bit of time reading over the code used in the practical you have chosen, and see if you can identify any bits of code where this is true. Are solutions convoluted and break when changed? Are magic numbers, strings, or other hard-coded elements getting in the way of changes or re-use? Is code difficult to understand or follow? Are there dependencies bewteen objects that make things difficult to isolate and debug?
 
-You might even find these problems in the template code, not just your own. Some ideas of common refactor projects for this class to get you started:
+You might even find these problems in the template code, not just your own. Some common refactor projects for this class to get you started:
 * Adding an FSM to replace nested if statements.
 * Replacing polling with event-driven code where suitable.
 * Better architecture through seperating game, UI, or other logic so less objects know need to know about each other.
 * Placing repeating code into a function that is called, or breaking up Update() and FixedUpdate() code into additional methods
 * Anything else you can think of that applies more suitable techniques to older pracs. As we say, you can even edit the template code, just as long as you can explain what you are doing ;).
 
+### Writing a plan
 Once you've identified a problem (or a few problems), make a note of them. Something succinct, such as "This mechanic is difficult to modifiy, because its code is repeated throughout a number of scripts". Think about how you are going to solve the problem.
 
-Now, start making a plan for your refactor. We will leave the exact documentation up to you, but you essentially want to create notes and diagrams that will help keep you on task and guide your refactor, even working things out as you go. Some examples include:
+Now, start making a plan for your refactor. We will leave the exact documentation up to you, but you essentially want to create notes and diagrams that will help keep you on task and guide your refactor. Some examples include:
 * Comments in the initial code.
 * ERDs
 * FSMs
 
 As you create these documents, you'll likely find that you are refining your plan.
-
 
 ## Checkpoint! Save, Commit and Push your work now
 
@@ -47,13 +47,13 @@ As you create these documents, you'll likely find that you are refining your pla
 ## Step 3 - Refactor! (40 min)
 Now, do your refactoring. Following your plan (but not being afraid to make changes), make the modifications to the code to implement your refactor. Make sure you are pushing things to Github, as your demonstrator will need to see evidence of your changes.
 
-Note: If functionality is improved (i.e. bugs are removed) as a result of your refactoring, that is absolutely fine. You can even improve accessibility. However, the emphasis should be on refactoring.
+Note: If functionality is improved as a result of your refactoring, that is absolutely fine. You can even improve accessibility. However, the emphasis should be on refactoring.
 
 Get ready to tell your demonstrator about your refactor. You will only have a couple of minutes to explain it to them, so make sure you are ready before calling them over.
 
 ## To receive full marks for this prac, show your demonstrator:
 * Your refactored project.
-* Evidence of your refactor (such as git history)
+* Evidence of your refactor (such as git history).
 * Why you made the changes and how it improved performance and/or architecture.
 
 ## Further reading
